@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 
@@ -9,7 +10,18 @@ export interface Articles {
   body: string
 }
 
-export const getStaticProps = async () => {
+export interface HomeProp {
+  articles?: {}[]
+  article?: {
+    userId?: number
+    id?: number
+    title: string
+    body: string
+  }
+  key?: string | number
+}
+
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
     const articles: Articles = data
@@ -24,7 +36,7 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Home({ articles }) {
+export default function Home({ articles }: HomeProp) {
   console.log('The articles are: ', articles)
   return (
     <div>
@@ -32,7 +44,7 @@ export default function Home({ articles }) {
         <title>App Next</title>
         <meta name='keyword' content='nextjs programming' />
       </Head>
-      
+
       <ArticleList articles={articles} />
     </div>
   )
