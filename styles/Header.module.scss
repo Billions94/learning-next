@@ -1,19 +1,20 @@
 .header {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    justify-content: flex-start;
     align-items: center;
     padding: 0.5rem 1rem;
     background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
+
+    .title, .description {
+        text-align: center;
+    }
 
     .title {
         margin: 0;
         line-height: 1.15;
         font-size: 4rem;
 
-        .description {
-            text-align: center;
-        }
 
         a, span {
             color: #0070f3;
