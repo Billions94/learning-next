@@ -1,3 +1,4 @@
+import { server } from "../../../config"
 import { useRouter } from "next/router"
 import { GetServerSidePropsContext, PreviewData } from "next/types"
 import { ParsedUrlQuery } from "querystring"
@@ -6,10 +7,9 @@ import { Articles, HomeProp } from "../.."
 import axios from "axios"
 
 
-
 export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
     try {
-        const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
+        const { data } = await axios.get(`${server}/api/articles/${context.params.id}`)
         const article: Articles = data
 
         return {
@@ -24,7 +24,7 @@ export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUr
 
 export const getStaticPaths = async () => {
     try {
-        const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        const { data } = await axios.get(`${server}/api/articles/`)
         const articles: Articles[] = data
 
         const idArr = articles.map((item: Articles) => item.id)
@@ -39,6 +39,39 @@ export const getStaticPaths = async () => {
         console.error(`Error getting static paths`, error)
     }
 }
+
+// export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
+//     try {
+//         const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
+//         const article: Articles = data
+
+//         return {
+//             props: {
+//                 article,
+//             }
+//         }
+//     } catch (error) {
+//         console.error(`Error getting article ${context.params.id}`, error)
+//     }
+// }
+
+// export const getStaticPaths = async () => {
+//     try {
+//         const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+//         const articles: Articles[] = data
+
+//         const idArr = articles.map((item: Articles) => item.id)
+//         const paths = idArr.map((id) => ({ params: { id: id.toString()}}))
+
+//         return {
+//             paths,
+//             fallback: false 
+//         }
+
+//     } catch (error) {
+//         console.error(`Error getting static paths`, error)
+//     }
+// }
 
 export default function article({ article }: HomeProp) {
 
