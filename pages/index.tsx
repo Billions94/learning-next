@@ -1,5 +1,4 @@
 import { server } from '../config'
-import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
@@ -26,7 +25,6 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const { data } = await axios.get(`${server}/api/articles`)
     const articles: Articles = data
-    console.log('articles: ', articles)
 
     return {
       props: {

@@ -5,6 +5,7 @@ import { ParsedUrlQuery } from "querystring"
 import Link from "next/link"
 import { Articles, HomeProp } from "../.."
 import axios from "axios"
+import Meta from "../../../components/Meta"
 
 
 export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
@@ -80,6 +81,7 @@ export default function article({ article }: HomeProp) {
 
   return (
     <>
+        <Meta title={article.title} />
         <h1>{article.title}</h1>
         <p>{article.body}</p>
         <br />

@@ -1,3 +1,3 @@
 const dev = process.env.NODE_ENV !== 'production'
 
-export const server = dev ? 'http://localhost:3000' : 'https://api.nextjs-blog.com'
+export const server = dev ? process.env.REACT_APP_GET_URL : 'https://api.nextjs-blog.com'

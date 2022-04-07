@@ -1,12 +1,9 @@
-import Head from "next/head";
+import Meta from "../components/Meta";
 
 export default function about() {
     return (
         <>
-            <Head>
-                <title>About Next</title>
-                <meta name='keyword' content='nextjs programming' />
-            </Head>
+            <Meta title='About' />
             <h1>About</h1>
         </>
     )
