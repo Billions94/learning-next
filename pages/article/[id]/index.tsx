@@ -42,8 +42,8 @@ export const getStaticPaths = async () => {
 
 export default function article({ article }: HomeProp) {
 
-    const router = useRouter()
-    const { id } = router.query
+    // const router = useRouter()
+    // const { id } = router.query
 
   return (
     <>
