@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 
-export interface Articles {
+export interface Article {
   userId?: number
   id?: number
   title: string
@@ -11,20 +11,15 @@ export interface Articles {
 }
 
 export interface HomeProp {
-  articles?: {}[]
-  article?: {
-    userId?: number
-    id?: number
-    title: string
-    body: string
-  }
+  articles?: Article[]
+  article?: Article
   key?: string | number
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const { data } = await axios.get(`${server}/api/articles`)
-    const articles: Articles = data
+    const articles: Article = data
 
     return {
       props: {
@@ -39,7 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
 // export const getStaticProps: GetStaticProps = async () => {
 //   try {
 //     const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
-//     const articles: Articles = data
+//     const articles: Article = data
 
 //     return {
 //       props: {
@@ -52,10 +47,8 @@ export const getStaticProps: GetStaticProps = async () => {
 // }
 
 export default function Home({ articles }: HomeProp) {
-  console.log('The articles are: ', articles)
   return (
     <div>
-
       <ArticleList articles={articles} />
     </div>
   )

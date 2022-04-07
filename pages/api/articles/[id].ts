@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { articlesData } from "./data";
+import { articlesData } from "../data/data";
 
 export default function handler({ query: { id } }: NextApiRequest, res: NextApiResponse) {
     try {
