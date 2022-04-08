@@ -1,10 +1,45 @@
-.header {
+#header {
     // display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem 1rem;
     background-color: #fff;
     border-bottom: 1px solid #e6e6e6;
+
+    .title, .description {
+        text-align: center;
+    }
+
+    .title {
+        margin: 0;
+        line-height: 1.15;
+        font-size: 4rem;
+
+
+        a, span {
+            color: #0070f3;
+            text-decoration: none;
+        }
+
+        a:focus, a:active, a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .description {
+        line-height: 1.5;
+        font-size: 1.5rem;
+    }
+}
+
+#headerDark {
+    background: rgb(12, 12, 12);
+    // display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #1c1c1c;
+    color: #fff;
 
     .title, .description {
         text-align: center;
