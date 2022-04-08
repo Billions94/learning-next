@@ -1,8 +1,10 @@
 #navbar {
+    position: sticky;
+    top: 0;
     height: 50px;
     padding: 40px;
-    background: #000;
-    color: #fff;
+    background: rgba(243, 243, 243, 0.79);
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,10 +36,12 @@
 }
 
 #navbarDark {
+    position: sticky;
+    top: 0;
     height: 50px;
     padding: 40px;
-    background: #fff;
-    color: #000;
+    background: rgba(0, 0, 0, 0.76);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;

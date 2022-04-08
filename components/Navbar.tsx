@@ -27,7 +27,7 @@ export default function Navbar() {
 
 
     return (
-        <nav id={check ? styles.navbarDark : styles.navbar}>
+        <nav id={check ? styles.navbar : styles.navbarDark}>
             <ul>
                 {route.map((item, idx) => (
                     <li key={idx}>
