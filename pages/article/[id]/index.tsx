@@ -1,9 +1,8 @@
 import { server } from "../../../config"
-import { useRouter } from "next/router"
 import { GetServerSidePropsContext, PreviewData } from "next/types"
 import { ParsedUrlQuery } from "querystring"
 import Link from "next/link"
-import { Articles, HomeProp } from "../.."
+import { Article, HomeProp } from "../.."
 import axios from "axios"
 import Meta from "../../../components/Meta"
 
@@ -11,7 +10,7 @@ import Meta from "../../../components/Meta"
 export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
     try {
         const { data } = await axios.get(`${server}/api/articles/${context.params.id}`)
-        const article: Articles = data
+        const article: Article = data
 
         return {
             props: {
@@ -26,9 +25,9 @@ export const getStaticProps = async (context: GetServerSidePropsContext<ParsedUr
 export const getStaticPaths = async () => {
     try {
         const { data } = await axios.get(`${server}/api/articles/`)
-        const articles: Articles[] = data
+        const articles: Article[] = data
 
-        const idArr = articles.map((item: Articles) => item.id)
+        const idArr = articles.map((item: Article) => item.id)
         const paths = idArr.map((id) => ({ params: { id: id.toString()}}))
 
         return {

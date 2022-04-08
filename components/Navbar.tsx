@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { Button, Image } from 'react-bootstrap'
+import * as Icon from '../lib'
 import styles from '../styles/Navbar.module.scss'
 
 export default function Navbar() {
@@ -9,10 +11,12 @@ export default function Navbar() {
             path: '/',
         },
         {
-            name: 'About',
-            path: '/about',
+            name: 'Contact',
+            path: '/contact',
         }
     ]
+
+    
 
     return (
         <nav className={styles.navbar}>
@@ -24,6 +28,9 @@ export default function Navbar() {
                         </Link>
                     </li>
                 ))}
+                <Button className={styles.toggleMode}>
+                    <Image className={styles.img} src={Icon.sunIconDark} alt='' />
+                </Button>
             </ul>
         </nav>
     )

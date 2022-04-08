@@ -1,11 +1,11 @@
 .navbar {
     height: 50px;
-    padding: 10px;
+    padding: 40px;
     background: #000;
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     ul {
         display: flex;
@@ -16,6 +16,18 @@
         li {
             a {
                 margin: 5px 15px;
+            }
+        }
+
+        .toggleMode {
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            .img {
+                width: 28px;
+                height: 28px;
             }
         }
     }
