@@ -10,6 +10,11 @@
       "StackName": "amplify-learningnext-dev-102240",
       "StackId": "arn:aws:cloudformation:eu-central-1:542256507213:stack/amplify-learningnext-dev-102240/3c666910-b7de-11ec-99c9-0676671c5018",
       "AmplifyAppId": "d3vllu1kgf8a6m"
+    },
+    "categories": {
+      "auth": {
+        "learningnext8a9b86c1": {}
+      }
     }
   }
 }

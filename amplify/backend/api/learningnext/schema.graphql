@@ -1,0 +1,16 @@
+type Article
+  @model
+  @auth(
+    rules: [
+      #owner can read and perfrom any action on their own  Article
+      { allow: owner, operations: [create, update, delete, read] }
+      #other signed in users can read everyones Article
+      { allow: private, operations: [read] }
+      #non-signed in users(guest) can read everyones Article
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+}

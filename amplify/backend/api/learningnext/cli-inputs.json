@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "learningnext",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/ejiroghene/Desktop/Personal-Projects/learning-next/amplify/backend/api/learningnext/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authlearningnext8a9b86c1"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-04-16T10:12:25.013Z",
+        "keyDescription": "trial"
+      }
+    ],
+    "conflictResolution": {}
+  }
+}
