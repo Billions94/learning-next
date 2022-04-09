@@ -8,6 +8,11 @@ export const onCreateArticle = /* GraphQL */ `
       id
       title
       description
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
     }
@@ -19,6 +24,11 @@ export const onUpdateArticle = /* GraphQL */ `
       id
       title
       description
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
     }
@@ -30,6 +40,11 @@ export const onDeleteArticle = /* GraphQL */ `
       id
       title
       description
+      file {
+        bucket
+        region
+        key
+      }
       createdAt
       updatedAt
     }

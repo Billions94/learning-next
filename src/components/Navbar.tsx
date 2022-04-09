@@ -45,7 +45,11 @@ export default function Navbar() {
     )
 }
 
-const DarkModeIcon = ({ check }) => {
+interface Props {
+    check: boolean
+}
+
+const DarkModeIcon = ({ check }: Props) => {
     return (
         <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
     )

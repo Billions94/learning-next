@@ -1,3 +1,9 @@
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
 type Article
   @model
   @auth(
@@ -13,4 +19,6 @@ type Article
   id: ID!
   title: String!
   description: String
+  # Reference the S3Object type from a field.
+  file: S3Object
 }

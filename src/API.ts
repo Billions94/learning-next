@@ -6,6 +6,13 @@ export type CreateArticleInput = {
   id?: string | null,
   title: string,
   description?: string | null,
+  file?: S3ObjectInput | null,
+};
+
+export type S3ObjectInput = {
+  bucket: string,
+  region: string,
+  key: string,
 };
 
 export type ModelArticleConditionInput = {
@@ -61,14 +68,23 @@ export type Article = {
   id?: string,
   title?: string,
   description?: string | null,
+  file?: S3Object,
   createdAt?: string,
   updatedAt?: string,
+};
+
+export type S3Object = {
+  __typename: "S3Object",
+  bucket?: string,
+  region?: string,
+  key?: string,
 };
 
 export type UpdateArticleInput = {
   id: string,
   title?: string | null,
   description?: string | null,
+  file?: S3ObjectInput | null,
 };
 
 export type DeleteArticleInput = {
@@ -117,6 +133,12 @@ export type CreateArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -133,6 +155,12 @@ export type UpdateArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -149,6 +177,12 @@ export type DeleteArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -164,6 +198,12 @@ export type GetArticleQuery = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -183,6 +223,12 @@ export type ListArticlesQuery = {
       id: string,
       title: string,
       description?: string | null,
+      file?:  {
+        __typename: "S3Object",
+        bucket: string,
+        region: string,
+        key: string,
+      } | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -196,6 +242,12 @@ export type OnCreateArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -207,6 +259,12 @@ export type OnUpdateArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -218,6 +276,12 @@ export type OnDeleteArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
+    file?:  {
+      __typename: "S3Object",
+      bucket: string,
+      region: string,
+      key: string,
+    } | null,
     createdAt: string,
     updatedAt: string,
   } | null,
