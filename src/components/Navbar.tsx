@@ -31,10 +31,8 @@ export default function Navbar() {
 
     async function signOut() {
         try {
-            const success = await Auth.signOut()
-            if (success) {
-                router.push('/signin')
-            }
+            await Auth.signOut()
+            router.push('/signin')
         } catch (error) {
             console.error('Error signing out user', error)
         }

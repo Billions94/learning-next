@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Header from './Header'
+// import Header from './Header'
 import Meta from './Meta'
 import { darkModeState } from '../atoms'
 import { useRecoilValue } from 'recoil'
@@ -21,7 +21,7 @@ export default function Layout({ children }: LayoutProps) {
             <Navbar />
             <div id={check ? styles.container : styles.containerDark}>
                 <main className={styles.main}>
-                    <Header />
+                    {/* <Header /> */}
                     {children}
                 </main>
             </div>

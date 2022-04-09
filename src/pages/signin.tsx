@@ -6,6 +6,7 @@ import { Auth } from 'aws-amplify'
 import { Button, Form, Col } from 'react-bootstrap'
 import { useUser } from '../context/AuthContext'
 import { useRouter } from 'next/router'
+import styles from '../styles/SignIn.module.scss'
 
 
 export type FormikProps = {
@@ -62,14 +63,14 @@ export default function SignUp() {
                     values,
                     errors,
                 }) => (
-                    <div className="register">
+                    <React.Fragment>
                         <h4 className="SignInHeading register1 mt-4">SIGN IN</h4>
-                        <Form noValidate className='register'>
+                        <Form noValidate id={styles.signIn}>
                             <Form.Group className='format'
                                 controlId="formBasicUserName">
                                 <Form.Control
                                     size="lg"
-                                    className="register"
+                                    className={styles.username}
                                     type="text"
                                     name="username"
                                     value={values.username}
@@ -82,10 +83,10 @@ export default function SignUp() {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            <Form.Group className='format'
+                            <Form.Group className='mt-2'
                                 controlId="formBasicPassword">
                                 <Form.Control
-                                    className="register"
+                                    className={styles.password}
                                     size="lg"
                                     type="password"
                                     name="password"
@@ -100,7 +101,7 @@ export default function SignUp() {
                             </Form.Group>
 
                             {values.password.length < 8 ?
-                                <Button variant="primary" disabled className='disabled1'>
+                                <Button variant="primary" disabled className='mt-3'>
                                     Sign In
                                 </Button> :
                                 <Button
@@ -110,14 +111,14 @@ export default function SignUp() {
                                     Sign In
                                 </Button>
                             }
-                            <Form.Text className="mr-2">
+                            <Form.Text className={styles.formtext}>
                                 New User?
                                 <Link href='/signup'>
-                                    Sign Up
+                                    <span className={styles.span}>Sign Up</span>
                                 </Link>
                             </Form.Text>
                         </Form>
-                    </div>
+                    </React.Fragment>
                 )}
             </Formik>
         </Col>
