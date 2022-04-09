@@ -6,6 +6,8 @@ import { Storage, API, graphqlOperation } from 'aws-amplify'
 import { createArticle } from '../graphql/mutations'
 import awsExports from '../aws-exports'
 
+
+
 export default function CreateArticle() {
 
     const initialState = {
@@ -50,9 +52,9 @@ export default function CreateArticle() {
     async function create() {
         try {
             const item = { ...newArticle }
+            setArticle([...article, item])
             const { data }: any = await API.graphql(graphqlOperation(createArticle, { input: article }))
             console.log('Article created', data)
-            setArticle([...article, item])
         } catch (error) {
             console.error('Error creating article', error)
         }
