@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import React from 'react'
 
-Meta.defaultProps = {
+interface Props {
     title: 'Next App',
     keywords: 'Nextjs programming',
     description: 'Get the latest news and updates on web development',
 }
 
-export default function Meta({ title, keywords, description}) {
+export default function Meta({ title, keywords, description }: Props) {
   return (
     <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
