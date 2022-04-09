@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button, Image } from 'react-bootstrap'
 import { useRecoilState } from 'recoil'
-import { darkModeState } from '../../atoms'
+import { darkModeState } from '../atoms'
 import * as Icon from '../../lib'
 import styles from '../styles/Navbar.module.scss'
 

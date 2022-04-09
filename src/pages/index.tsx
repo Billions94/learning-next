@@ -1,7 +1,9 @@
+import React from 'react'
 import { server } from '../../config'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
+import CreateArticle from '../components/CreateArticle'
 
 export interface Article {
   userId?: number
@@ -34,8 +36,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home({ articles }: HomeProp) {
   return (
-    <div>
+    <React.Fragment>
+      <CreateArticle />
       <ArticleList articles={articles} />
-    </div>
+    </React.Fragment>
   )
 }

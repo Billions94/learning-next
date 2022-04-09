@@ -14,3 +14,20 @@ export const darkModeState = atom<true | false >({
     default: false,
     effects_UNSTABLE: [persistAtom]
 })
+
+interface Article {
+    id?: string
+    title: string
+    description: string
+    file?: {
+        bucket: string
+        region: string
+        key: string
+    }
+}
+
+export const articleState = atom<Article[]>({
+    key: 'article',
+    default: [],
+    effects_UNSTABLE: [persistAtom]
+})

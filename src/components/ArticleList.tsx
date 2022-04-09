@@ -1,6 +1,6 @@
 import { Article, HomeProp } from '../pages'
 import ArticleItem from './ArticleItem'
-import { darkModeState } from '../../atoms'
+import { darkModeState } from '../atoms'
 import { useRecoilValue } from 'recoil'
 import styles from '../styles/Article.module.scss'
 
