@@ -4,6 +4,9 @@ import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 import CreateArticle from '../components/CreateArticle'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { useUser } from '../context/AuthContext'
 
 export interface Article {
   userId?: number
@@ -35,6 +38,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
 
 export default function Home({ articles }: HomeProp) {
+  const { user } = useUser()
+  const router = useRouter()
+
+  console.log('This is the user', user)
+
+  useEffect(() => {
+    if (user === null || undefined) {
+      router.push('/signin')
+    }
+  }, [])
   return (
     <React.Fragment>
       <CreateArticle />

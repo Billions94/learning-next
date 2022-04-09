@@ -1,24 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import Link from 'next/link'
 import { Auth } from 'aws-amplify'
 import { Button, Form, Col } from 'react-bootstrap'
 import { useUser } from '../context/AuthContext'
-import { CognitoUser } from '@aws-amplify/auth'
 import { useRouter } from 'next/router'
 
 
 export type FormikProps = {
     username?: string
-    email: string
     password: string
-    code: string
 }
 
 const schema = yup.object({
     username: yup.string().required("Please Enter a username"),
-    email: yup.string().email().required("Please Enter your Email"),
     password: yup
         .string()
         .required("Please Enter your password")
@@ -31,45 +27,13 @@ const schema = yup.object({
 
 export default function SignUp() {
 
-    const router  = useRouter()
+    const router = useRouter()
 
     const { user } = useUser()
-    const [showCode, setShowCode] = useState<boolean>(false)
 
-    async function onSubmit(data: FormikProps): Promise<void> {
+    async function signIn(data: FormikProps) {
+        const { username, password } = data
         try {
-            if (showCode) {
-                confirmSignUp(data)
-            } else {
-                await signUp(data)
-                setShowCode(true)
-            }
-        } catch (error) {
-            console.log('Error logging in user', error)
-        }
-    }
-
-    async function signUp(data: FormikProps): Promise<CognitoUser> {
-        const { username, email, password } = data
-        try {
-            const { user } = await Auth.signUp({
-                username,
-                password,
-                attributes: {
-                    email,
-                }
-            });
-            console.log('User signed up', user);
-            return user
-        } catch (error) {
-            console.log('error signing up:', error);
-        }
-    }
-
-    async function confirmSignUp(data: FormikProps) {
-        const { username, password, code } = data
-        try {
-            await Auth.confirmSignUp(username, code);
             const amplifyUser = await Auth.signIn(username, password)
             console.log('Signed in a user', amplifyUser)
             if (amplifyUser) {
@@ -88,12 +52,10 @@ export default function SignUp() {
         <Col sm={6} md={4} className='customMT mx-auto'>
             <Formik
                 validationSchema={schema}
-                onSubmit={signUp}
+                onSubmit={signIn}
                 initialValues={{
                     username: "",
-                    email: "",
-                    password: "",
-                    code: ""
+                    password: ""
                 }}>
                 {({
                     handleChange,
@@ -101,7 +63,7 @@ export default function SignUp() {
                     errors,
                 }) => (
                     <div className="register">
-                        <h4 className="SignInHeading register1 mt-4">SIGN UP</h4>
+                        <h4 className="SignInHeading register1 mt-4">SIGN IN</h4>
                         <Form noValidate className='register'>
                             <Form.Group className='format'
                                 controlId="formBasicUserName">
@@ -117,23 +79,6 @@ export default function SignUp() {
                                 />
                                 <Form.Control.Feedback className="FeedBack" type="invalid">
                                     {errors.username}
-                                </Form.Control.Feedback>
-                            </Form.Group>
-
-                            <Form.Group className='format'
-                                controlId="formBasicEmail">
-                                <Form.Control
-                                    type="email"
-                                    placeholder="Email"
-                                    value={values.email}
-                                    onChange={handleChange}
-                                    name="email"
-                                    className="register"
-                                    size="lg"
-                                    isInvalid={!!errors.email}
-                                />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
-                                    {errors.email}
                                 </Form.Control.Feedback>
                             </Form.Group>
 
@@ -154,40 +99,21 @@ export default function SignUp() {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            {showCode &&
-                                <Form.Group className='format'
-                                    controlId="formBasicPassword">
-                                    <Form.Control
-                                        className="register"
-                                        size="lg"
-                                        type="text"
-                                        name="code"
-                                        value={values.code}
-                                        onChange={handleChange}
-                                        placeholder="Code"
-                                        isInvalid={!!errors.code}
-                                    />
-                                    <Form.Control.Feedback className="FeedBack" type="invalid">
-                                        {errors.code}
-                                    </Form.Control.Feedback>
-                                </Form.Group>
-                            }
-
                             {values.password.length < 8 ?
                                 <Button variant="primary" disabled className='disabled1'>
-                                    Sign Up
+                                    Sign In
                                 </Button> :
                                 <Button
-                                    onClick={() => onSubmit(values)}
+                                    onClick={() => signIn(values)}
                                     variant="primary"
                                     className='modal-btn'>
-                                    {showCode ? 'Confirm code' : 'Sign Up'}
+                                    Sign In
                                 </Button>
                             }
-                            <Form.Text>
-                                Already a User?{" "}
-                                <Link href='/signin'>
-                                    Sign In
+                            <Form.Text className="mr-2">
+                                New User?
+                                <Link href='/signup'>
+                                    Sign Up
                                 </Link>
                             </Form.Text>
                         </Form>

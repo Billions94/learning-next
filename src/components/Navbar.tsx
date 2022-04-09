@@ -1,8 +1,11 @@
+import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Button, Image } from 'react-bootstrap'
 import { useRecoilState } from 'recoil'
 import { darkModeState } from '../atoms'
 import * as Icon from '../../lib'
+import { Auth } from 'aws-amplify'
 import styles from '../styles/Navbar.module.scss'
 
 export default function Navbar() {
@@ -24,6 +27,19 @@ export default function Navbar() {
     }
     const check: boolean = darkMode === false
 
+    const router = useRouter()
+
+    async function signOut() {
+        try {
+            const success = await Auth.signOut()
+            if (success) {
+                router.push('/signin')
+            }
+        } catch (error) {
+            console.error('Error signing out user', error)
+        }
+    }
+
 
 
     return (
@@ -38,8 +54,13 @@ export default function Navbar() {
                 ))}
                 <Button onClick={() => toggle()}
                     className={styles.toggleMode}>
-                    <DarkModeIcon check={check}/>
+                    <DarkModeIcon check={check} />
                 </Button>
+                <div className="ml-auto">
+                    <Button onClick={() => signOut()}>
+                        Sign Out
+                    </Button>
+                </div>
             </ul>
         </nav>
     )
