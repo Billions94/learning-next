@@ -3,7 +3,7 @@ import Meta from "../components/Meta";
 export default function about() {
     return (
         <>
-            <Meta title='About' />
+            <Meta  />
             <h1>About</h1>
         </>
     )

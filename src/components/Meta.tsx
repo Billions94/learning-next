@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 interface Props {
-  title: 'Next App',
-  keywords: 'Nextjs programming',
-  description: 'Get the latest news and updates on web development',
+  title?: 'Next App',
+  keywords?: 'Nextjs programming',
+  description?: 'Get the latest news and updates on web development',
 }
 
 export default function Meta({ title, keywords, description }: Props) {
