@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-learningnext-dev-102240-authRole",
+      "UnauthRoleArn": "arn:aws:iam::542256507213:role/amplify-learningnext-dev-102240-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::542256507213:role/amplify-learningnext-dev-102240-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-learningnext-dev-102240-deployment",
+      "UnauthRoleName": "amplify-learningnext-dev-102240-unauthRole",
+      "StackName": "amplify-learningnext-dev-102240",
+      "StackId": "arn:aws:cloudformation:eu-central-1:542256507213:stack/amplify-learningnext-dev-102240/3c666910-b7de-11ec-99c9-0676671c5018",
+      "AmplifyAppId": "d3vllu1kgf8a6m"
+    }
+  }
+}
