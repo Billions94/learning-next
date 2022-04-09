@@ -50,7 +50,7 @@ export default function SignUp() {
     console.log('This is the user', user)
 
     return (
-        <Col sm={6} md={4} className='customMT mx-auto'>
+        <Col sm={6} md={4} className={styles.customMT}>
             <Formik
                 validationSchema={schema}
                 onSubmit={signIn}
@@ -64,7 +64,7 @@ export default function SignUp() {
                     errors,
                 }) => (
                     <React.Fragment>
-                        <h4 className="SignInHeading register1 mt-4">SIGN IN</h4>
+                        <h4 className={styles.hTitle}>SIGN IN</h4>
                         <Form noValidate id={styles.signIn}>
                             <Form.Group className='format'
                                 controlId="formBasicUserName">
@@ -100,23 +100,28 @@ export default function SignUp() {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            {values.password.length < 8 ?
-                                <Button variant="primary" disabled className='mt-3'>
-                                    Sign In
-                                </Button> :
-                                <Button
-                                    onClick={() => signIn(values)}
-                                    variant="primary"
-                                    className='modal-btn'>
-                                    Sign In
-                                </Button>
-                            }
-                            <Form.Text className={styles.formtext}>
-                                New User?
-                                <Link href='/signup'>
-                                    <span className={styles.span}>Sign Up</span>
-                                </Link>
-                            </Form.Text>
+                            <div className="d-flex">
+                                <React.Fragment></React.Fragment>
+                                <Form.Text className={`${styles.formText} mt-3`}>
+                                    {" "}New User ?{" "}
+                                    <Link href='/signup'>
+                                        Sign Up
+                                    </Link>
+                                </Form.Text>
+                                <div style={{ marginLeft: 'auto' }}>
+                                    {values.password.length < 8 ?
+                                        <Button variant="primary" disabled className='mt-3'>
+                                            Sign In
+                                        </Button> :
+                                        <Button
+                                            onClick={() => signIn(values)}
+                                            variant="primary"
+                                            className='modal-btn'>
+                                            Sign In
+                                        </Button>
+                                    }
+                                </div>
+                            </div>
                         </Form>
                     </React.Fragment>
                 )}

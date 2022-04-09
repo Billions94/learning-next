@@ -7,6 +7,7 @@ import { Button, Form, Col } from 'react-bootstrap'
 import { useUser } from '../context/AuthContext'
 import { CognitoUser } from '@aws-amplify/auth'
 import { useRouter } from 'next/router'
+import styles from '../styles/SignIn.module.scss'
 
 
 export type FormikProps = {
@@ -31,7 +32,7 @@ const schema = yup.object({
 
 export default function SignUp() {
 
-    const router  = useRouter()
+    const router = useRouter()
 
     const { user } = useUser()
     const [showCode, setShowCode] = useState<boolean>(false)
@@ -85,7 +86,7 @@ export default function SignUp() {
     console.log('This is the user', user)
 
     return (
-        <Col sm={6} md={4} className='customMT mx-auto'>
+        <Col sm={6} md={4} className={styles.customMT}>
             <Formik
                 validationSchema={schema}
                 onSubmit={signUp}
@@ -100,14 +101,14 @@ export default function SignUp() {
                     values,
                     errors,
                 }) => (
-                    <div className="register">
-                        <h4 className="SignInHeading register1 mt-4">SIGN UP</h4>
-                        <Form noValidate className='register'>
+                    <React.Fragment>
+                        <h4 className={styles.hTitle}>SIGN UP</h4>
+                        <Form noValidate id={styles.signUp}>
                             <Form.Group className='format'
                                 controlId="formBasicUserName">
                                 <Form.Control
                                     size="lg"
-                                    className="register"
+                                    className={styles.username}
                                     type="text"
                                     name="username"
                                     value={values.username}
@@ -120,15 +121,15 @@ export default function SignUp() {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            <Form.Group className='format'
+                            <Form.Group className='mt-2'
                                 controlId="formBasicEmail">
                                 <Form.Control
+                                    className={styles.email}
                                     type="email"
                                     placeholder="Email"
                                     value={values.email}
                                     onChange={handleChange}
                                     name="email"
-                                    className="register"
                                     size="lg"
                                     isInvalid={!!errors.email}
                                 />
@@ -137,10 +138,10 @@ export default function SignUp() {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            <Form.Group className='format'
+                            <Form.Group className='mt-2'
                                 controlId="formBasicPassword">
                                 <Form.Control
-                                    className="register"
+                                    className={styles.password}
                                     size="lg"
                                     type="password"
                                     name="password"
@@ -155,7 +156,7 @@ export default function SignUp() {
                             </Form.Group>
 
                             {showCode &&
-                                <Form.Group className='format'
+                                <Form.Group className='mt-2'
                                     controlId="formBasicPassword">
                                     <Form.Control
                                         className="register"
@@ -173,25 +174,30 @@ export default function SignUp() {
                                 </Form.Group>
                             }
 
-                            {values.password.length < 8 ?
-                                <Button variant="primary" disabled className='disabled1'>
-                                    Sign Up
-                                </Button> :
-                                <Button
-                                    onClick={() => onSubmit(values)}
-                                    variant="primary"
-                                    className='modal-btn'>
-                                    {showCode ? 'Confirm code' : 'Sign Up'}
-                                </Button>
-                            }
-                            <Form.Text>
-                                Already a User?{" "}
-                                <Link href='/signin'>
-                                    Sign In
-                                </Link>
-                            </Form.Text>
+                            <div className="d-flex">
+                                <React.Fragment></React.Fragment>
+                                <Form.Text className={`${styles.formText} mt-3`}>
+                                    Already a User ?{" "}
+                                    <Link href='/signin'>
+                                        Sign In
+                                    </Link>
+                                </Form.Text>
+                                <div style={{ marginLeft: 'auto' }}>
+                                    {values.password.length < 8 ?
+                                        <Button variant="primary" disabled className='mt-3'>
+                                            Sign Up
+                                        </Button> :
+                                        <Button
+                                            onClick={() => onSubmit(values)}
+                                            variant="primary"
+                                            className='modal-btn'>
+                                            {showCode ? 'Confirm code' : 'Sign Up'}
+                                        </Button>
+                                    }
+                                </div>
+                            </div>
                         </Form>
-                    </div>
+                    </React.Fragment>
                 )}
             </Formik>
         </Col>

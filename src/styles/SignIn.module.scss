@@ -1,14 +1,44 @@
-#sigIn, #signUp {
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&family=Smooch+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 
-    .username, .password {
-        margin-top: 5px;
+.customMT {
+    // margin: auto;
+
+    .hTitle {
+        font-family: 'Bitter', serif;
+        font-family: 'Smooch Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.15;
+        color: #0070f3;
+        text-align: center;
+        margin: 0;
+        text-decoration: none;
     }
 
-    .formtext {
-        margin-left: 15px;
+    #signIn,
+    #signUp {
 
-        .span {
-             margin-left: 15px;
+
+        .username,
+        .password,
+        .email {
+            margin-top: 5px;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 500;
+            line-break: 20px;
+            letter-spacing: 1px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            color: #000;
+            transition-delay: ease-in 0.5s;
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .formText {
+            margin-left: 5px;
         }
     }
 }
