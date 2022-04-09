@@ -1,4 +1,4 @@
-import { server } from '../config'
+import { server } from '../../config'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'

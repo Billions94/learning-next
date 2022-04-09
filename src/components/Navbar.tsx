@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Button, Image } from 'react-bootstrap'
 import { useRecoilState } from 'recoil'
-import { darkModeState } from '../atoms'
-import * as Icon from '../lib'
+import { darkModeState } from '../../atoms'
+import * as Icon from '../../lib'
 import styles from '../styles/Navbar.module.scss'
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
 
 const DarkModeIcon = ({ check }) => {
     return (
-        <Image className={styles.img} src={check ? Icon.sunIcon : Icon.sunIconDark} alt='' />
+        <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
     )
 }
 

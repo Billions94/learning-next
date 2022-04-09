@@ -1,4 +1,4 @@
-import { server } from "../../../config"
+import { server } from "../../../../config"
 import { GetServerSidePropsContext, PreviewData } from "next/types"
 import { ParsedUrlQuery } from "querystring"
 import Link from "next/link"

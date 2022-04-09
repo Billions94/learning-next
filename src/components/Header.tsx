@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil'
-import { darkModeState } from '../atoms'
+import { darkModeState } from '../../atoms'
 import styles from '../styles/Header.module.scss'
 
 export default function Header() {
