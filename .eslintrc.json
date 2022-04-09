@@ -21,6 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "react/react-in-jsx-scope": "off"
     }
 }
