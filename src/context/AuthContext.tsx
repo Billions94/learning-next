@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, useContext } from 'react'
 import { Auth, Hub } from 'aws-amplify'
 import { CognitoUser } from '@aws-amplify/auth'
 
@@ -13,7 +13,7 @@ interface Props {
     children: React.ReactElement
 }
 
-export default function authContext({ children }: Props) {
+export default function AuthContext({ children }: Props) {
 
     const [user, setUser] = useState<CognitoUser | null>(null)
 
@@ -47,3 +47,5 @@ export default function authContext({ children }: Props) {
         </UserContext.Provider>
     )
 }
+
+export const useUser = (): UserContextType => useContext(UserContext)

@@ -5,14 +5,17 @@ import '../styles/globals.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Amplify from "aws-amplify"
 import awsExports from "../aws-exports"
+import AuthContext from '../context/AuthContext'
 Amplify.configure({ ...awsExports, ssr: true })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AuthContext>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AuthContext>
     </RecoilRoot>
   )
 }
