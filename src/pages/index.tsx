@@ -31,21 +31,6 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   try {
-//     const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
-//     const articles: Article = data
-
-//     return {
-//       props: {
-//         articles,
-//       }
-//     }
-//   } catch (error) {
-//     console.error('Error getting articles', error)
-//   }
-// }
-
 export default function Home({ articles }: HomeProp) {
   return (
     <div>
