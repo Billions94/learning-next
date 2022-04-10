@@ -193,13 +193,16 @@ export default function SignUp() {
                                 <div style={{ marginLeft: 'auto' }}>
                                     {values.password.length < 8 ?
                                         <Button variant="primary" disabled className={`${styles.signUpBtn} mt-3`} >
-                                            Sign Up
+                                            <span className={styles.span}>Sign Up</span>
                                         </Button> :
                                         <Button
                                             onClick={() => onSubmit(values)}
                                             variant="primary"
                                             className={`${styles.signUpBtn}`}>
-                                            {showCode ? 'Confirm code' : 'Sign Up'}
+                                            {showCode ?
+                                                <span className={styles.span}>Confirm Code</span>
+                                                :
+                                                <span className={styles.span}>Sign Up</span>}
                                         </Button>
                                     }
                                 </div>

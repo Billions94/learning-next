@@ -117,13 +117,13 @@ export default function SignUp() {
                                 <div style={{ marginLeft: 'auto' }}>
                                     {values.password.length < 8 ?
                                         <Button variant="primary" disabled className={`${styles.signInBtn} mt-3`}>
-                                            Sign In
+                                            <span className={styles.span}>Sign In</span>
                                         </Button> :
                                         <Button
                                             onClick={() => signIn(values)}
                                             variant="primary"
                                             className={`${styles.signInBtn}`}>
-                                            Sign In
+                                            <span className={styles.span}>Sign In</span>
                                         </Button>
                                     }
                                 </div>

@@ -72,7 +72,22 @@
             -webkit-box-sizing: border-box;
         }
 
-
+        .span {
+            font-size: 17px;
+            color: #000;
+            background: transparent;
+            font-weight: 600;
+            line-break: 20px;
+            letter-spacing: 1px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
 
         .username,
         .password,
@@ -189,7 +204,22 @@
             -webkit-box-sizing: border-box;
         }
 
-
+        .span {
+            font-size: 17px;
+            color: #fff;
+            background: transparent;
+            font-weight: 600;
+            line-break: 20px;
+            letter-spacing: 1px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
 
         .username,
         .password,
@@ -218,7 +248,8 @@
 
         .username:focus,
         .password:focus,
-        .email:focus, .code:focus {
+        .email:focus,
+        .code:focus {
             color: #fff;
             outline: none;
             border-bottom: 1px solid;
@@ -231,7 +262,8 @@
 
         .username:active,
         .password:active,
-        .email:active, .code:active {
+        .email:active,
+        .code:active {
             color: #fff;
             outline: none;
             background: transparent;
