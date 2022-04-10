@@ -121,7 +121,7 @@ export default function SignUp() {
                                     placeholder="Username"
                                     isInvalid={!!errors.username}
                                 />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
+                                <Form.Control.Feedback className={styles.error} type="invalid">
                                     {errors.username}
                                 </Form.Control.Feedback>
                             </Form.Group>
@@ -139,7 +139,7 @@ export default function SignUp() {
                                     size="lg"
                                     isInvalid={!!errors.email}
                                 />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
+                                <Form.Control.Feedback className={styles.error} type="invalid">
                                     {errors.email}
                                 </Form.Control.Feedback>
                             </Form.Group>
@@ -157,7 +157,7 @@ export default function SignUp() {
                                     placeholder="Password"
                                     isInvalid={!!errors.password}
                                 />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
+                                <Form.Control.Feedback className={styles.error} type="invalid">
                                     {errors.password}
                                 </Form.Control.Feedback>
                             </Form.Group>
@@ -166,7 +166,7 @@ export default function SignUp() {
                                 <Form.Group className='mt-2'
                                     controlId="formBasicPassword">
                                     <Form.Control
-                                        className="register"
+                                        className={styles.code}
                                         autoComplete='off'
                                         size="lg"
                                         type="text"
@@ -176,7 +176,7 @@ export default function SignUp() {
                                         placeholder="Code"
                                         isInvalid={!!errors.code}
                                     />
-                                    <Form.Control.Feedback className="FeedBack" type="invalid">
+                                    <Form.Control.Feedback className={styles.error} type="invalid">
                                         {errors.code}
                                     </Form.Control.Feedback>
                                 </Form.Group>

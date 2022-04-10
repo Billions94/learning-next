@@ -83,7 +83,7 @@ export default function SignUp() {
                                     placeholder="Username"
                                     isInvalid={!!errors.username}
                                 />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
+                                <Form.Control.Feedback className={styles.error} type="invalid">
                                     {errors.username}
                                 </Form.Control.Feedback>
                             </Form.Group>
@@ -101,7 +101,7 @@ export default function SignUp() {
                                     placeholder="Password"
                                     isInvalid={!!errors.password}
                                 />
-                                <Form.Control.Feedback className="FeedBack" type="invalid">
+                                <Form.Control.Feedback className={styles.error} type="invalid">
                                     {errors.password}
                                 </Form.Control.Feedback>
                             </Form.Group>

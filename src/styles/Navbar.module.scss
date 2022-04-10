@@ -47,31 +47,40 @@
 @keyframes disappear {
     0% {
         visibility: hidden;
+        // font-size: 12.5px;
     }
 
     25% {
         visibility: visible;
+        // font-size: 13.5px;
     }
 
     50% {
         visibility: visible;
+        // font-size: 15.5px;
     }
 
     75% {
         visibility: visible;
+        // font-size: 13.5px;
     }
 
     100% {
         visibility: hidden;
+        // font-size: 12.5px;
     }
 }
 
 #navbar {
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffa%2F14%2F05%2Ffa140577c517e10c581576a6617800cf.jpg&f=1&nofb=1');
+    background-size: contain;
+    background-repeat: round;
+    background-color: rgba(243, 243, 243, 0.79);
+    background-blend-mode: overlay;
     position: sticky;
     top: 0;
     height: 50px;
     padding: 40px 80px;
-    background: rgba(243, 243, 243, 0.79);
     color: #000;
     display: flex;
     align-items: center;
@@ -165,11 +174,13 @@
         }
 
         .toggleMode:hover #DarkModeIcon .light {
-            animation: disappear 5s linear forwards;
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         .toggleMode:hover #SignOutIcon .light1 {
-            animation: disappear 5s linear forwards;
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         #DarkModeIcon,
@@ -256,11 +267,15 @@
 }
 
 #navbarDark {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffa%2F14%2F05%2Ffa140577c517e10c581576a6617800cf.jpg&f=1&nofb=1');
+    background-size: contain;
+    background-repeat: round;
+    background-color: rgba(25, 25, 25, 0.905);
+    background-blend-mode: overlay;
     position: sticky;
     top: 0;
     height: 50px;
     padding: 40px 80px;
-    background: rgba(0, 0, 0, 0.905);
     color: #fff;
     display: flex;
     align-items: center;
@@ -353,11 +368,13 @@
         }
 
         .toggleMode:hover #DarkModeIcon .dark {
-            animation: disappear 5s linear forwards;
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         .toggleMode:hover #SignOutIcon .dark1 {
-            animation: disappear 5s linear forwards;
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
 

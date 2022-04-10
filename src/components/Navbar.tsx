@@ -28,6 +28,7 @@ export default function Navbar() {
     const check: boolean = darkMode === false
 
     const router = useRouter()
+    const location = useRouter()
 
     async function signOut() {
         try {
@@ -38,40 +39,75 @@ export default function Navbar() {
         }
     }
 
+    const signin: string = '/signin'
+    const signup: string = '/signup'
+
 
 
     return (
-        <nav id={check ? styles.navbar : styles.navbarDark}>
-            <ul>
-                <React.Fragment>
-                    {route.map((item, idx) => (
-                        <li key={idx}>
-                            <Link href={item.path}>
-                                {item.name}
-                            </Link>
-                            <span className={styles.slider}></span>
-                        </li>
-                    ))}
-                </React.Fragment>
-            </ul>
-            <div className={styles.signOut}>
-                <Button onClick={() => toggle()}
-                    className={styles.toggleMode}>
-                    <DarkModeIcon
-                        check={check}
-                        x={check ? styles.light : styles.dark}
-                        y={styles.DarkModeIcon}  />
-                </Button>
+        <React.Fragment>
+            {location.pathname === '/' &&
+                <nav id={check ? styles.navbar : styles.navbarDark}>
+                    <ul>
+                        <React.Fragment>
+                            {route.map((item, idx) => (
+                                <li key={idx}>
+                                    <Link href={item.path}>
+                                        {item.name}
+                                    </Link>
+                                    <span className={styles.slider}></span>
+                                </li>
+                            ))}
+                        </React.Fragment>
+                    </ul>
+                    <div className={styles.signOut}>
+                        <Button onClick={() => toggle()}
+                            className={styles.toggleMode}>
+                            <DarkModeIcon
+                                check={check}
+                                x={check ? styles.light : styles.dark}
+                                y={styles.DarkModeIcon} />
+                        </Button>
 
-                <Button onClick={() => signOut()}
-                    className={styles.toggleMode}>
-                    <SignOutIcon
-                        check={check}
-                        x={check ? styles.light1 : styles.dark1}
-                        y={styles.SignOutIcon} />
-                </Button>
-            </div>
-        </nav>
+                        <Button onClick={() => signOut()}
+                            className={styles.toggleMode}>
+                            <SignOutIcon
+                                check={check}
+                                x={check ? styles.light1 : styles.dark1}
+                                y={styles.SignOutIcon} />
+                        </Button>
+                    </div>
+                </nav>
+            }
+
+            {location.pathname === `${signin}` &&
+                <nav id={check ? styles.navbar : styles.navbarDark}>
+                    <div className={styles.signOut}>
+                        <Button onClick={() => toggle()}
+                            className={styles.toggleMode}>
+                            <DarkModeIcon
+                                check={check}
+                                x={check ? styles.light : styles.dark}
+                                y={styles.DarkModeIcon} />
+                        </Button>
+                    </div>
+                </nav>
+            }
+
+            {location.pathname === `${signup}` &&
+                <nav id={check ? styles.navbar : styles.navbarDark}>
+                    <div className={styles.signOut}>
+                        <Button onClick={() => toggle()}
+                            className={styles.toggleMode}>
+                            <DarkModeIcon
+                                check={check}
+                                x={check ? styles.light : styles.dark}
+                                y={styles.DarkModeIcon} />
+                        </Button>
+                    </div>
+                </nav>
+            }
+        </React.Fragment>
     )
 }
 

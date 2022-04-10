@@ -52,13 +52,36 @@
             border-radius: 0;
         }
 
+        .error {
+            font-size: 15px;
+            color: red;
+            background: transparent;
+            font-weight: 500;
+            line-break: 20px;
+            letter-spacing: 1px;
+            border: none;
+            border-bottom: 1px solid #6b6b6b;
+            border-radius: 0px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+
+
         .username,
         .password,
-        .email {
+        .email,
+        .code {
             margin-top: 5px;
             align-items: center;
             font-size: 20px;
-            font-weight: 500;
+            font-weight: 400;
             line-break: 20px;
             letter-spacing: 1px;
             background: transparent;
@@ -72,13 +95,14 @@
             color: #000;
             transition-delay: ease-in 0.5s;
             transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            box-sizing:border-box;
-            -webkit-box-sizing:border-box;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
         }
 
         .username:focus,
         .password:focus,
-        .email:focus {
+        .email:focus,
+        .code:focus {
             color: #000;
             outline: none;
             border-bottom: 1px solid;
@@ -90,7 +114,7 @@
 
         .username:active,
         .password:active,
-        .email:active {
+        .email:active .code:active {
             color: #000;
             outline: none;
             border-bottom: 1px solid;
@@ -145,9 +169,32 @@
             border-radius: 0;
         }
 
+        .error {
+            font-size: 15px;
+            color: red;
+            background: transparent;
+            font-weight: 400;
+            line-break: 20px;
+            letter-spacing: 1px;
+            border: none;
+            border-bottom: 1px solid #6b6b6b;
+            border-radius: 0px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+
+
         .username,
         .password,
-        .email {
+        .email,
+        .code {
             margin-top: 5px;
             align-items: center;
             font-size: 20px;
@@ -162,16 +209,16 @@
                 serif;
             font-family: 'Smooch Sans',
                 sans-serif;
-            color: #000;
+            color: #fff;
             transition-delay: ease-in 0.8s;
             transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            box-sizing:border-box;
-            -webkit-box-sizing:border-box;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
         }
 
         .username:focus,
         .password:focus,
-        .email:focus {
+        .email:focus, .code:focus {
             color: #fff;
             outline: none;
             border-bottom: 1px solid;
@@ -184,7 +231,7 @@
 
         .username:active,
         .password:active,
-        .email:active {
+        .email:active, .code:active {
             color: #fff;
             outline: none;
             background: transparent;
