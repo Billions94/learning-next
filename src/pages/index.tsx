@@ -5,8 +5,9 @@ import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 import CreateArticle from '../components/CreateArticle'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useUser } from '../context/AuthContext'
+// import { CognitoUser } from '@aws-amplify/auth'
 
 export interface Article {
   userId?: number
@@ -39,14 +40,22 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home({ articles }: HomeProp) {
   const { user } = useUser()
-  const router = useRouter()
+  // const router = useRouter()
 
   console.log('This is the user', user)
 
+  function check() {
+    // setTimeout((user) => {
+    //   console.log('The user after time out', user)
+    //   if (user === null) {
+    //     router.push('/signin')
+    //   }
+    // }, 700)
+  }
+
   useEffect(() => {
-    if (user === null || undefined) {
-      router.push('/signin')
-    }
+    check()
+    console.log('This is the useEffect User', user)
   }, [])
   return (
     <React.Fragment>

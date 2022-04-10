@@ -46,7 +46,7 @@ export default function Navbar() {
 
     return (
         <React.Fragment>
-            {location.pathname === '/' &&
+            {location.pathname !== `${signin}` && location.pathname !== `${signup}` &&
                 <nav id={check ? styles.navbar : styles.navbarDark}>
                     <ul>
                         <React.Fragment>

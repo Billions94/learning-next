@@ -122,7 +122,7 @@ export default function SignUp() {
                                         <Button
                                             onClick={() => signIn(values)}
                                             variant="primary"
-                                            className={`${styles.signInBtn}`}>
+                                            className={`${styles.signInBtn} mt-3`}>
                                             <span className={styles.span}>Sign In</span>
                                         </Button>
                                     }

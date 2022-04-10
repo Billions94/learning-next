@@ -198,7 +198,7 @@ export default function SignUp() {
                                         <Button
                                             onClick={() => onSubmit(values)}
                                             variant="primary"
-                                            className={`${styles.signUpBtn}`}>
+                                            className={`${styles.signUpBtn} mt-3`}>
                                             {showCode ?
                                                 <span className={styles.span}>Confirm Code</span>
                                                 :
