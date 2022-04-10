@@ -43,20 +43,23 @@ export default function Navbar() {
     return (
         <nav id={check ? styles.navbar : styles.navbarDark}>
             <ul>
-                {route.map((item, idx) => (
-                    <li key={idx}>
-                        <Link href={item.path}>
-                            {item.name}
-                        </Link>
-                    </li>
-                ))}
-                <Button onClick={() => toggle()}
-                    className={styles.toggleMode}>
-                    <DarkModeIcon check={check} />
-                </Button>
-                <div className="ml-auto">
-                    <Button onClick={() => signOut()}>
-                        Sign Out
+                <React.Fragment>
+                    {route.map((item, idx) => (
+                        <li key={idx}>
+                            <Link href={item.path}>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                    <Button onClick={() => toggle()}
+                        className={styles.toggleMode}>
+                        <DarkModeIcon check={check} />
+                    </Button>
+                </React.Fragment>
+                <div className={styles.signOut}>
+                    <Button onClick={() => signOut()}
+                        className={styles.toggleMode}>
+                        <SignOutIcon check={check} />
                     </Button>
                 </div>
             </ul>
@@ -71,6 +74,12 @@ interface Props {
 const DarkModeIcon = ({ check }: Props) => {
     return (
         <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
+    )
+}
+
+const SignOutIcon = ({ check }: Props) => {
+    return (
+        <Image className={styles.img1} src={check ? Icon.signOutIcon : Icon.signOutIconDark} alt='' />
     )
 }
 

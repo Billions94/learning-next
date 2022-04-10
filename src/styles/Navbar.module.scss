@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&family=Smooch+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spread {
+    0% {
+        letter-spacing: 1px;
+    }
+
+    25% {
+        letter-spacing: 2px;
+    }
+
+    50% {
+        letter-spacing: 3px;
+    }
+
+    75% {
+        letter-spacing: 2px;
+    }
+
+    100% {
+        letter-spacing: 1px;
+    }
+}
+
 #navbar {
     position: sticky;
     top: 0;
@@ -36,14 +80,15 @@
                 margin: 5px 15px;
                 align-items: center;
                 visibility: visible;
-                letter-spacing: 4px;
+                letter-spacing: 3px;
                 transform: translateY(-8px);
                 font-size: 20px;
                 font-weight: 500;
                 line-break: 20px;
                 font-family: 'Bitter', serif;
                 font-family: 'Smooch Sans', sans-serif;
-                transition-delay: ease-in 0.5s;
+                // animation: spread 0.5s linear forwards;
+                transition-delay: ease-in 0.6s;
                 transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             }
         }
@@ -58,6 +103,27 @@
                 width: 28px;
                 height: 28px;
             }
+
+            .img1 {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .toggleMode:hover {
+            animation: zoom 1s linear forwards;
+        }
+
+        .toggleMode:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .toggleMode:active {
+            outline: none;
+            border: none;
+            box-shadow: none;
         }
     }
 }
@@ -98,7 +164,7 @@
                 margin: 5px 15px;
                 align-items: center;
                 visibility: visible;
-                letter-spacing: 4px;
+                letter-spacing: 3px;
                 transform: translateY(-8px);
                 font-size: 20px;
                 font-weight: 500;
@@ -120,6 +186,32 @@
                 width: 28px;
                 height: 28px;
             }
+
+            .img1 {
+                width: 20px;
+                height: 20px;
+                margin-left: auto;
+            }
+        }
+
+        .signOut {
+            margin-left: auto;
+        }
+
+        .toggleMode:hover {
+            animation: zoom 1s linear forwards;
+        }
+
+        .toggleMode:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        .toggleMode:active {
+            outline: none;
+            border: none;
+            box-shadow: none;
         }
     }
 }

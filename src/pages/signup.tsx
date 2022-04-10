@@ -7,6 +7,8 @@ import { Button, Form, Col } from 'react-bootstrap'
 import { useUser } from '../context/AuthContext'
 import { CognitoUser } from '@aws-amplify/auth'
 import { useRouter } from 'next/router'
+import { darkModeState } from '../atoms'
+import { useRecoilValue } from 'recoil'
 import styles from '../styles/SignIn.module.scss'
 
 
@@ -36,6 +38,8 @@ export default function SignUp() {
 
     const { user } = useUser()
     const [showCode, setShowCode] = useState<boolean>(false)
+    const darkMode = useRecoilValue(darkModeState)
+    const check: boolean = darkMode === false
 
     async function onSubmit(data: FormikProps): Promise<void> {
         try {
@@ -86,7 +90,7 @@ export default function SignUp() {
     console.log('This is the user', user)
 
     return (
-        <Col sm={6} md={4} className={styles.customMT}>
+        <Col sm={6} md={4} className={check ? styles.customMT : styles.customMTDark}>
             <Formik
                 validationSchema={schema}
                 onSubmit={signUp}
@@ -184,13 +188,13 @@ export default function SignUp() {
                                 </Form.Text>
                                 <div style={{ marginLeft: 'auto' }}>
                                     {values.password.length < 8 ?
-                                        <Button variant="primary" disabled className='mt-3'>
+                                        <Button variant="primary" disabled className={`${styles.signUpBtn} mt-3`} >
                                             Sign Up
                                         </Button> :
                                         <Button
                                             onClick={() => onSubmit(values)}
                                             variant="primary"
-                                            className='modal-btn'>
+                                            className={`${styles.signUpBtn}`}>
                                             {showCode ? 'Confirm code' : 'Sign Up'}
                                         </Button>
                                     }

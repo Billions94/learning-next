@@ -6,6 +6,8 @@ import { Auth } from 'aws-amplify'
 import { Button, Form, Col } from 'react-bootstrap'
 import { useUser } from '../context/AuthContext'
 import { useRouter } from 'next/router'
+import { useRecoilValue } from 'recoil'
+import { darkModeState } from '../atoms'
 import styles from '../styles/SignIn.module.scss'
 
 
@@ -31,6 +33,8 @@ export default function SignUp() {
     const router = useRouter()
 
     const { user } = useUser()
+    const darkMode = useRecoilValue(darkModeState)
+    const check: boolean = darkMode === false
 
     async function signIn(data: FormikProps) {
         const { username, password } = data
@@ -50,7 +54,7 @@ export default function SignUp() {
     console.log('This is the user', user)
 
     return (
-        <Col sm={6} md={4} className={styles.customMT}>
+        <Col sm={6} md={4} className={check ? styles.customMT : styles.customMTDark}>
             <Formik
                 validationSchema={schema}
                 onSubmit={signIn}
@@ -110,13 +114,13 @@ export default function SignUp() {
                                 </Form.Text>
                                 <div style={{ marginLeft: 'auto' }}>
                                     {values.password.length < 8 ?
-                                        <Button variant="primary" disabled className='mt-3'>
+                                        <Button variant="primary" disabled className={`${styles.signInBtn} mt-3`}>
                                             Sign In
                                         </Button> :
                                         <Button
                                             onClick={() => signIn(values)}
                                             variant="primary"
-                                            className='modal-btn'>
+                                            className={`${styles.signInBtn}`}>
                                             Sign In
                                         </Button>
                                     }

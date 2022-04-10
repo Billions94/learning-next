@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700&family=Smooch+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 
+@keyframes slide {
+    0% {
+        width: 0;
+    }
+
+    25% {
+        width: 25%;
+        // border-bottom-style: dotted;
+    }
+
+    50% {
+        width: 50%;
+        // border-bottom-style: dotted;
+    }
+
+    75% {
+        width: 75%;
+        // border-bottom-style: dotted;
+    }
+
+    100% {
+        width: 100%;
+        //    border-bottom-style: dotted;
+    }
+}
+
 .customMT {
     // margin: auto;
 
@@ -9,7 +35,7 @@
         font-size: 2rem;
         font-weight: 500;
         line-height: 1.15;
-        color: #0070f3;
+        color: black;
         text-align: center;
         margin: 0;
         text-decoration: none;
@@ -18,6 +44,13 @@
     #signIn,
     #signUp {
 
+        .signInBtn,
+        .signUpBtn {
+            background: white;
+            border: 1px solid #000;
+            color: #000;
+            border-radius: 0;
+        }
 
         .username,
         .password,
@@ -28,6 +61,10 @@
             font-weight: 500;
             line-break: 20px;
             letter-spacing: 1px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ced4da;
+            border-radius: 0px;
             font-family: 'Bitter',
                 serif;
             font-family: 'Smooch Sans',
@@ -37,8 +74,141 @@
             transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
+        .username:focus,
+        .password:focus,
+        .email:focus {
+            color: #000;
+            outline: none;
+            border-bottom: 1px solid;
+            margin-bottom: -1px;
+            box-shadow: none;
+            animation: slide 0.7s linear forwards;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .username:active,
+        .password:active,
+        .email:active {
+            color: #000;
+            outline: none;
+            border-bottom: 1px solid;
+            margin-bottom: -1px;
+            box-shadow: none;
+            animation: slide 0.7s linear forwards;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
         .formText {
             margin-left: 5px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 18px;
+            letter-spacing: 1px;
+            color: black;
+            text-align: center;
+            margin: 0;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.customMTDark {
+    // margin: auto;
+
+    .hTitle {
+        font-family: 'Bitter', serif;
+        font-family: 'Smooch Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.15;
+        color: white;
+        text-align: center;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    #signIn,
+    #signUp {
+
+        .signInBtn,
+        .signUpBtn {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            border-radius: 0;
+        }
+
+        .username,
+        .password,
+        .email {
+            margin-top: 5px;
+            align-items: center;
+            font-size: 20px;
+            background: transparent;
+            font-weight: 500;
+            line-break: 20px;
+            letter-spacing: 1px;
+            border: none;
+            border-bottom: 1px solid #6b6b6b;
+            border-radius: 0px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            color: #000;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .username:focus,
+        .password:focus,
+        .email:focus {
+            color: #fff;
+            outline: none;
+            border-bottom: 1px solid;
+            background: transparent;
+            margin-bottom: -1px;
+            box-shadow: none;
+            animation: slide 0.7s linear forwards;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .username:active,
+        .password:active,
+        .email:active {
+            color: #fff;
+            outline: none;
+            background: transparent;
+            border-bottom: 1px solid;
+            margin-bottom: -1px;
+            box-shadow: none;
+            animation: slide 0.7s linear forwards;
+            transition-delay: ease-in 0.8s;
+            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .formText {
+            margin-left: 5px;
+            font-family: 'Bitter',
+                serif;
+            font-family: 'Smooch Sans',
+                sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 18px;
+            letter-spacing: 1px;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            text-decoration: none;
         }
     }
 }
