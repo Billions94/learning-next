@@ -76,6 +76,7 @@ export default function SignUp() {
                                     size="lg"
                                     className={styles.username}
                                     type="text"
+                                    autoComplete='off'
                                     name="username"
                                     value={values.username}
                                     onChange={handleChange}
@@ -92,6 +93,7 @@ export default function SignUp() {
                                 <Form.Control
                                     className={styles.password}
                                     size="lg"
+                                    autoComplete='off'
                                     type="password"
                                     name="password"
                                     value={values.password}

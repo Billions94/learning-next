@@ -49,37 +49,55 @@ export default function Navbar() {
                             <Link href={item.path}>
                                 {item.name}
                             </Link>
+                            <span className={styles.slider}></span>
                         </li>
                     ))}
-                    <Button onClick={() => toggle()}
-                        className={styles.toggleMode}>
-                        <DarkModeIcon check={check} />
-                    </Button>
                 </React.Fragment>
-                <div className={styles.signOut}>
-                    <Button onClick={() => signOut()}
-                        className={styles.toggleMode}>
-                        <SignOutIcon check={check} />
-                    </Button>
-                </div>
             </ul>
+            <div className={styles.signOut}>
+                <Button onClick={() => toggle()}
+                    className={styles.toggleMode}>
+                    <DarkModeIcon
+                        check={check}
+                        x={check ? styles.light : styles.dark}
+                        y={styles.DarkModeIcon}  />
+                </Button>
+
+                <Button onClick={() => signOut()}
+                    className={styles.toggleMode}>
+                    <SignOutIcon
+                        check={check}
+                        x={check ? styles.light1 : styles.dark1}
+                        y={styles.SignOutIcon} />
+                </Button>
+            </div>
         </nav>
     )
 }
 
 interface Props {
     check: boolean
+    x?: string
+    y?: string
 }
 
-const DarkModeIcon = ({ check }: Props) => {
+const DarkModeIcon = ({ check, x, y }: Props) => {
     return (
-        <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
+        <div id={y}>
+            <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
+            <div className={x}>
+                {check ? 'Dark Mode' : 'Light Mode'}
+            </div>
+        </div>
     )
 }
 
-const SignOutIcon = ({ check }: Props) => {
+const SignOutIcon = ({ check, x, y }: Props) => {
     return (
-        <Image className={styles.img1} src={check ? Icon.signOutIcon : Icon.signOutIconDark} alt='' />
+        <div id={y}>
+            <Image className={styles.img1} src={check ? Icon.signOutIcon : Icon.signOutIconDark} alt='' />
+            <h6 className={x}>Sign Out</h6>
+        </div>
     )
 }
 

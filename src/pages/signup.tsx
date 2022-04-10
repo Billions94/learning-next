@@ -113,6 +113,7 @@ export default function SignUp() {
                                 <Form.Control
                                     size="lg"
                                     className={styles.username}
+                                    autoComplete='off'
                                     type="text"
                                     name="username"
                                     value={values.username}
@@ -129,6 +130,7 @@ export default function SignUp() {
                                 controlId="formBasicEmail">
                                 <Form.Control
                                     className={styles.email}
+                                    autoComplete='off'
                                     type="email"
                                     placeholder="Email"
                                     value={values.email}
@@ -146,6 +148,7 @@ export default function SignUp() {
                                 controlId="formBasicPassword">
                                 <Form.Control
                                     className={styles.password}
+                                    autoComplete='off'
                                     size="lg"
                                     type="password"
                                     name="password"
@@ -164,6 +167,7 @@ export default function SignUp() {
                                     controlId="formBasicPassword">
                                     <Form.Control
                                         className="register"
+                                        autoComplete='off'
                                         size="lg"
                                         type="text"
                                         name="code"
