@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Button, Image } from 'react-bootstrap'
 import { useRecoilState } from 'recoil'
@@ -52,10 +51,10 @@ export default function Navbar() {
                         <React.Fragment>
                             {route.map((item, idx) => (
                                 <li key={idx}>
-                                    <Link href={item.path}>
+                                    <a href={item.path} className={styles.link}>
                                         {item.name}
-                                    </Link>
-                                    <span className={styles.slider}></span>
+                                        <span className={styles.slider}></span>
+                                    </a>
                                 </li>
                             ))}
                         </React.Fragment>
@@ -120,7 +119,7 @@ interface Props {
 const DarkModeIcon = ({ check, x, y }: Props) => {
     return (
         <div id={y}>
-            <Image className={styles.img} src={check ? Icon.sunIcon : Icon.moonIconDark} alt='' />
+            <Image className={styles.img} src={check ? Icon.moonIcon : Icon.sunIconDark} alt='' />
             <div className={x}>
                 {check ? 'Dark Mode' : 'Light Mode'}
             </div>

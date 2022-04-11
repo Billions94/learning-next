@@ -7,7 +7,7 @@ export default function ArticleItem({ article }: HomeProp) {
     <Link href={`/article/${article.id}`}>
         <a className={styles.card}>
             <h3>{article.title} &rarr;</h3>
-            <p>{article.body}</p>
+            <p>{article.description}</p>
         </a>
     </Link>
   )

@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { server } from '../../config'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 import CreateArticle from '../components/CreateArticle'
 import { useEffect } from 'react'
-// import { useRouter } from 'next/router'
 import { useUser } from '../context/AuthContext'
-// import { CognitoUser } from '@aws-amplify/auth'
+import { Article, ListArticlesQuery } from '../API'
+import { API, graphqlOperation } from 'aws-amplify'
+import { listArticles } from '../graphql/queries'
 
-export interface Article {
-  userId?: number
-  id?: number
-  title: string
-  body: string
-}
+
+// export interface Article {
+//   userId?: number
+//   id?: number
+//   title: string
+//   body: string
+// }
 
 export interface HomeProp {
   articles?: Article[]
@@ -39,24 +41,38 @@ export const getStaticProps: GetStaticProps = async () => {
 
 
 export default function Home({ articles }: HomeProp) {
+
   const { user } = useUser()
-  // const router = useRouter()
+  const [article, setArticle] = useState<Article[]>([])
+
 
   console.log('This is the user', user)
 
-  function check() {
-    // setTimeout((user) => {
-    //   console.log('The user after time out', user)
-    //   if (user === null) {
-    //     router.push('/signin')
-    //   }
-    // }, 700)
-  }
+
 
   useEffect(() => {
-    check()
-    console.log('This is the useEffect User', user)
+    const fetchData = async (): Promise<Article[]> => {
+      try {
+        const { data } = (await API.graphql(graphqlOperation(listArticles, { limit: 10 }))) as {
+          data: ListArticlesQuery;
+          errors: any[];
+        }
+
+        const { items } = data.listArticles
+        if (items) {
+          setArticle(items as Article[])
+          return items as Article[]
+        } else { throw new Error('Error fetching articles') }
+      } catch (error) {
+        console.error('Error fetching articles', error)
+      }
+    }
+
+    fetchData()
   }, [])
+
+  console.log('This is the article', article)
+
   return (
     <React.Fragment>
       <CreateArticle />

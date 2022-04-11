@@ -1,7 +1,8 @@
-import { Article, HomeProp } from '../pages'
+import {  HomeProp } from '../pages'
 import ArticleItem from './ArticleItem'
 import { darkModeState } from '../atoms'
 import { useRecoilValue } from 'recoil'
+import { Article } from '../API'
 import styles from '../styles/Article.module.scss'
 
 export default function ArticleList({ articles }: HomeProp) {
