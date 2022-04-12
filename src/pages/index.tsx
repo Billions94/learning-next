@@ -11,13 +11,6 @@ import { API, graphqlOperation } from 'aws-amplify'
 import { listArticles } from '../graphql/queries'
 
 
-// export interface Article {
-//   userId?: number
-//   id?: number
-//   title: string
-//   body: string
-// }
-
 export interface HomeProp {
   articles?: Article[]
   article?: Article
@@ -40,20 +33,18 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 
-export default function Home({ articles }: HomeProp) {
+export default function Home() {
 
   const { user } = useUser()
   const [article, setArticle] = useState<Article[]>([])
-
+  const [refresh, setRefresh] = useState<boolean>(false)
 
   console.log('This is the user', user)
-
-
 
   useEffect(() => {
     const fetchData = async (): Promise<Article[]> => {
       try {
-        const { data } = (await API.graphql(graphqlOperation(listArticles, { limit: 10 }))) as {
+        const { data } = (await API.graphql(graphqlOperation(listArticles))) as {
           data: ListArticlesQuery;
           errors: any[];
         }
@@ -69,14 +60,14 @@ export default function Home({ articles }: HomeProp) {
     }
 
     fetchData()
-  }, [])
+  }, [refresh])
 
   console.log('This is the article', article)
 
   return (
     <React.Fragment>
-      <CreateArticle />
-      <ArticleList articles={articles} />
+      <CreateArticle setRefresh={setRefresh} />
+      <ArticleList articles={article} />
     </React.Fragment>
   )
 }

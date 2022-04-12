@@ -11,11 +11,7 @@ export const createArticle = /* GraphQL */ `
       id
       title
       description
-      file {
-        bucket
-        region
-        key
-      }
+      media
       createdAt
       updatedAt
     }
@@ -30,11 +26,7 @@ export const updateArticle = /* GraphQL */ `
       id
       title
       description
-      file {
-        bucket
-        region
-        key
-      }
+      media
       createdAt
       updatedAt
     }
@@ -49,11 +41,7 @@ export const deleteArticle = /* GraphQL */ `
       id
       title
       description
-      file {
-        bucket
-        region
-        key
-      }
+      media
       createdAt
       updatedAt
     }

@@ -1,8 +1,3 @@
-type S3Object {
-  bucket: String!
-  region: String!
-  key: String!
-}
 
 type Article
   @model
@@ -20,5 +15,5 @@ type Article
   title: String!
   description: String
   # Reference the S3Object type from a field.
-  file: S3Object
+  media: String
 }

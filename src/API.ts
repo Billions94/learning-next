@@ -6,18 +6,13 @@ export type CreateArticleInput = {
   id?: string | null,
   title: string,
   description?: string | null,
-  file?: S3ObjectInput | null,
-};
-
-export type S3ObjectInput = {
-  bucket: string,
-  region: string,
-  key: string,
+  media?: string | null,
 };
 
 export type ModelArticleConditionInput = {
   title?: ModelStringInput | null,
   description?: ModelStringInput | null,
+  media?: ModelStringInput | null,
   and?: Array< ModelArticleConditionInput | null > | null,
   or?: Array< ModelArticleConditionInput | null > | null,
   not?: ModelArticleConditionInput | null,
@@ -68,23 +63,16 @@ export type Article = {
   id?: string,
   title?: string,
   description?: string | null,
-  file?: S3Object,
+  media?: string | null,
   createdAt?: string,
   updatedAt?: string,
-};
-
-export type S3Object = {
-  __typename: "S3Object",
-  bucket?: string,
-  region?: string,
-  key?: string,
 };
 
 export type UpdateArticleInput = {
   id: string,
   title?: string | null,
   description?: string | null,
-  file?: S3ObjectInput | null,
+  media?: string | null,
 };
 
 export type DeleteArticleInput = {
@@ -95,6 +83,7 @@ export type ModelArticleFilterInput = {
   id?: ModelIDInput | null,
   title?: ModelStringInput | null,
   description?: ModelStringInput | null,
+  media?: ModelStringInput | null,
   and?: Array< ModelArticleFilterInput | null > | null,
   or?: Array< ModelArticleFilterInput | null > | null,
   not?: ModelArticleFilterInput | null,
@@ -133,12 +122,7 @@ export type CreateArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -155,12 +139,7 @@ export type UpdateArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -177,12 +156,7 @@ export type DeleteArticleMutation = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -198,12 +172,7 @@ export type GetArticleQuery = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -223,12 +192,7 @@ export type ListArticlesQuery = {
       id: string,
       title: string,
       description?: string | null,
-      file?:  {
-        __typename: "S3Object",
-        bucket: string,
-        region: string,
-        key: string,
-      } | null,
+      media?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -242,12 +206,7 @@ export type OnCreateArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -259,12 +218,7 @@ export type OnUpdateArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -276,12 +230,7 @@ export type OnDeleteArticleSubscription = {
     id: string,
     title: string,
     description?: string | null,
-    file?:  {
-      __typename: "S3Object",
-      bucket: string,
-      region: string,
-      key: string,
-    } | null,
+    media?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,

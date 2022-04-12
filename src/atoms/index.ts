@@ -19,11 +19,7 @@ interface Article {
     id?: string
     title: string
     description: string
-    file?: {
-        bucket: string
-        region: string
-        key: string
-    }
+    media?: string
 }
 
 export const articleState = atom<Article[]>({

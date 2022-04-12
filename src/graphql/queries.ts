@@ -8,11 +8,7 @@ export const getArticle = /* GraphQL */ `
       id
       title
       description
-      file {
-        bucket
-        region
-        key
-      }
+      media
       createdAt
       updatedAt
     }
@@ -29,11 +25,7 @@ export const listArticles = /* GraphQL */ `
         id
         title
         description
-        file {
-          bucket
-          region
-          key
-        }
+        media
         createdAt
         updatedAt
       }
