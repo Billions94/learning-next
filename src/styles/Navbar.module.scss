@@ -183,8 +183,14 @@
             transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
+        .toggleMode:hover #CreateIcon .light2 {
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
         #DarkModeIcon,
-        #SignOutIcon {
+        #SignOutIcon,
+        #CreateIcon {
             position: relative;
 
             .light {
@@ -219,12 +225,12 @@
                     sans-serif;
             }
 
-            .dark {
+            .light2 {
                 position: absolute;
                 visibility: hidden;
                 top: 28px;
-                left: -19px;
-                color: #fff;
+                right: -31.5px;
+                color: #000;
                 font-size: 15.5px;
                 font-weight: 500;
                 line-break: 20px;
@@ -235,21 +241,6 @@
                     sans-serif;
             }
 
-            .dark1 {
-                position: absolute;
-                visibility: hidden;
-                top: 28px;
-                right: -20px;
-                color: #fff;
-                font-size: 15.5px;
-                font-weight: 500;
-                line-break: 20px;
-                letter-spacing: 1px;
-                font-family: 'Bitter',
-                    serif;
-                font-family: 'Smooch Sans',
-                    sans-serif;
-            }
         }
 
         .toggleMode:focus {
@@ -380,42 +371,16 @@
             transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
+        .toggleMode:hover #CreateIcon .dark2 {
+            animation: disappear 1.5s linear forwards;
+            transition: 2s ease-out cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
 
         #DarkModeIcon,
-        #SignOutIcon {
+        #SignOutIcon,
+        #CreateIcon {
             position: relative;
-
-            .light {
-                position: absolute;
-                visibility: hidden;
-                top: 28px;
-                left: -19px;
-                color: #000;
-                font-size: 15.5px;
-                font-weight: 500;
-                line-break: 20px;
-                letter-spacing: 1px;
-                font-family: 'Bitter',
-                    serif;
-                font-family: 'Smooch Sans',
-                    sans-serif;
-            }
-
-            .light1 {
-                position: absolute;
-                visibility: hidden;
-                top: 28px;
-                right: -20px;
-                color: #000;
-                font-size: 15.5px;
-                font-weight: 500;
-                line-break: 20px;
-                letter-spacing: 1px;
-                font-family: 'Bitter',
-                    serif;
-                font-family: 'Smooch Sans',
-                    sans-serif;
-            }
 
             .dark {
                 position: absolute;
@@ -438,6 +403,22 @@
                 visibility: hidden;
                 top: 28px;
                 right: -20px;
+                color: #fff;
+                font-size: 15.5px;
+                font-weight: 500;
+                line-break: 20px;
+                letter-spacing: 1px;
+                font-family: 'Bitter',
+                    serif;
+                font-family: 'Smooch Sans',
+                    sans-serif;
+            }
+
+            .dark2 {
+                position: absolute;
+                visibility: hidden;
+                top: 28px;
+                right: -31.5px;
                 color: #fff;
                 font-size: 15.5px;
                 font-weight: 500;

@@ -113,11 +113,23 @@
 }
 
 #cac {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     #createArticle {
-        display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         max-width: 800px;
+
+        .createBtn {
+            margin-top: 10px;
+            background: transparent;
+            border: 1px solid black;
+            color: black;
+            border-radius: 0;
+        }
     }
 }

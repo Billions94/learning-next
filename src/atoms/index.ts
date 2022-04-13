@@ -9,7 +9,7 @@ const { persistAtom } = recoilPersist({
     storage: localStorage
 })
 
-export const darkModeState = atom<true | false >({
+export const darkModeState = atom<true | false>({
     key: 'darkMode',
     default: false,
     effects_UNSTABLE: [persistAtom]
@@ -20,10 +20,25 @@ interface Article {
     title: string
     description: string
     media?: string
+    createdAt?: Date
+    updatedAt?: Date
+    owner?: string
 }
 
 export const articleState = atom<Article[]>({
     key: 'article',
     default: [],
+    effects_UNSTABLE: [persistAtom]
+})
+
+export const showState = atom<true | false>({
+    key: 'showstate',
+    default: false,
+    effects_UNSTABLE: [persistAtom]
+})
+
+export const refreshState = atom<true | false>({
+    key: 'refreshstate',
+    default: false,
     effects_UNSTABLE: [persistAtom]
 })

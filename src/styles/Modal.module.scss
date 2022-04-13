@@ -1,0 +1,456 @@
+// Modal styles
+
+.modal-content:disabled {
+    border-radius: none !important;
+    outline: 0;
+}
+
+.modal {
+    .modalheader {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        border-bottom: 0;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+    }
+
+    .modalcontent {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 0 !important;
+        outline: 0;
+    }
+
+    .modal-body {
+        padding: 20px 30px;
+    }
+
+    .closeBtn {
+        background: transparent !important;
+        border: none !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+    }
+
+    .closeBtn:hover {
+        background: rgb(236, 236, 236) !important;
+        border-radius: 50% !important;
+    }
+
+    .closeBtn:active {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .closeBtn:focus {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+}
+
+
+.modalDark {
+
+    .modalheader {
+        border-bottom: none;
+    }
+
+    .modalcontent {
+        background: #0f0f0f;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 0;
+        outline: 0;
+    }
+
+    .modal-body {
+        padding: 20px 30px;
+    }
+
+    .closeBtn {
+        background: transparent;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .closeBtn:hover {
+        background: rgb(51, 51, 51);
+        border-radius: 50%;
+    }
+
+    .closeBtn:active {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .closeBtn:focus {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+// Form styles
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: 'Bitter', serif;
+    font-family: 'Smooch Sans', sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#form {
+
+    .formcontrol {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        font-family: 'Bitter', serif;
+        font-family: 'Smooch Sans', sans-serif;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-bottom: 1px solid #ced4da;
+        appearance: none;
+        border-radius: 0;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .select {
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        border: none;
+    }
+
+    .select:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .select:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .select-dark {
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        border: none;
+        color: rgb(124, 124, 124);
+        background: transparent;
+    }
+
+    .select-dark:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .select-dark:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .formcontrol:active {
+        border: none;
+        border-radius: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgb(216, 215, 215);
+    }
+
+    .formcontrol:focus {
+        border: none;
+        border-radius: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgb(216, 215, 215);
+    }
+
+    .formcontroldark {
+        background: transparent !important;
+        border-bottom: 1px solid rgb(108, 117, 125) !important;
+        color: white !important;
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5;
+        font-family: 'Bitter',
+            serif;
+        font-family: 'Smooch Sans',
+            sans-serif;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: none;
+        border-bottom: 1px solid #ced4da;
+        appearance: none;
+        border-radius: 0;
+        transition: border-color .15s ease-in-out,
+            box-shadow .15s ease-in-out;
+    }
+
+    .formcontroldark:active {
+        background: transparent !important;
+        border: none;
+        border-radius: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgb(108, 117, 125);
+        color: white;
+    }
+
+    .formcontroldark:focus {
+        background: transparent;
+        border: none;
+        border-radius: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgb(108, 117, 125);
+        color: white;
+    }
+
+    .createBtn {
+        border: 1px solid black;
+        background: white;
+        color: black;
+        width: 230px;
+        border-radius: 0;
+        transition-delay: ease-in 0.5s;
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        margin-left: auto;
+
+        .btnSpan {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Bitter', serif;
+            font-family: 'Smooch Sans', sans-serif;
+        }
+    }
+
+    .createBtn:hover {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        animation-duration: 2s;
+    }
+
+    .createBtn:active {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .createBtn:focus {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .createBtnDark {
+        border: 1px solid rgb(108, 117, 125);
+        background: transparent;
+        color: white;
+        width: 230px;
+        border-radius: 0;
+        transition-delay: ease-in 0.5s;
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        .btnSpan {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Bitter', serif;
+            font-family: 'Smooch Sans', sans-serif;
+        }
+    }
+
+    .createBtnDark:hover {
+        border: 1px solid black;
+        background: rgb(230, 230, 230);
+        letter-spacing: 3px;
+        color: black;
+        width: 230px;
+        animation-duration: 2s;
+    }
+
+    .createBtnDark:active {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .createBtnDark:focus {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .delProdBtn {
+        border: 1px solid black;
+        background: white;
+        color: black;
+        width: 230px;
+        border-radius: 0;
+        transition-delay: ease-in 0.5s;
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        .btn-span {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Bitter', serif;
+            font-family: 'Smooch Sans', sans-serif;
+        }
+    }
+
+    .delProdBtn:hover {
+        border: 1px solid rgb(227, 2, 2);
+        background: rgb(227, 2, 2);
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        animation-duration: 2s;
+    }
+
+    .delProdBtn:active {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .delProdBtn:focus {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .delProdBtn-dark {
+        border: 1px solid rgb(108, 117, 125);
+        background: transparent;
+        color: white;
+        width: 230px;
+        border-radius: 0;
+        transition-delay: ease-in 0.5s;
+        transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+        .btn-span {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Bitter', serif;
+            font-family: 'Smooch Sans', sans-serif;
+        }
+    }
+
+    .delProdBtn-dark:hover {
+        border: 1px solid rgb(227, 2, 2);
+        background: rgb(227, 2, 2);
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        animation-duration: 2s;
+    }
+
+    .delProdBtn-dark:active {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+    .delProdBtn-dark:focus {
+        border: 1px solid black;
+        background: black;
+        letter-spacing: 3px;
+        color: white;
+        width: 230px;
+        box-shadow: none;
+        outline: none;
+
+    }
+
+}

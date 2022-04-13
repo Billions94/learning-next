@@ -2,10 +2,11 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { Button, Image } from 'react-bootstrap'
 import { useRecoilState } from 'recoil'
-import { darkModeState } from '../atoms'
+import { darkModeState, showState } from '../atoms'
 import * as Icon from '../../lib'
 import { Auth } from 'aws-amplify'
 import styles from '../styles/Navbar.module.scss'
+
 
 export default function Navbar() {
 
@@ -21,6 +22,9 @@ export default function Navbar() {
     ]
 
     const [darkMode, setDarkMode] = useRecoilState(darkModeState)
+    // eslint-disable-next-line no-unused-vars
+    const [show, setShow] = useRecoilState(showState)
+
     const toggle = () => {
         darkMode === false ? setDarkMode(true) : setDarkMode(false)
     }
@@ -60,7 +64,16 @@ export default function Navbar() {
                         </React.Fragment>
                     </ul>
                     <div className={styles.signOut}>
-                        <Button onClick={() => toggle()}
+                        <Button onClick={() => setShow(true)}
+                            className={styles.toggleMode}
+                            style={{ marginRight: '55px' }}>
+                            <CreateIcon
+                                check={check}
+                                x={check ? styles.light2 : styles.dark2}
+                                y={styles.CreateIcon} />
+                        </Button>
+
+                        <Button onClick={toggle}
                             className={styles.toggleMode}>
                             <DarkModeIcon
                                 check={check}
@@ -136,3 +149,11 @@ const SignOutIcon = ({ check, x, y }: Props) => {
     )
 }
 
+const CreateIcon = ({ check, x, y }: Props) => {
+    return (
+        <div id={y}>
+            <Image className={styles.img1} src={check ? Icon.createIcon : Icon.createIconDark} alt='' />
+            <h6 className={x}>New Article</h6>
+        </div>
+    )
+}

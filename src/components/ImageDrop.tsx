@@ -1,8 +1,16 @@
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 
+
 const container = {
-    border: '1px solid #000',
+    border: '1px solid auto',
+    borderStyle: 'dotted',
+    borderWidth: 1,
+    padding: 16,
+} as React.CSSProperties;
+
+const dark = {
+    border: '4px solid #fff',
     borderStyle: 'dotted',
     borderWidth: 1,
     padding: 16,
@@ -19,8 +27,6 @@ const thumb = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // borderRadius: 2,
-    // border: '1px solid #eaeaea',
     marginBottom: 8,
     marginRight: 8,
     width: '100%',
@@ -46,12 +52,16 @@ const img = {
 
 interface Props {
     file: File
+    darkMode: boolean
     setFile: React.Dispatch<React.SetStateAction<File>>
     closePreview?: boolean
     setClosePreview?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function ImageDrop({ file, setFile, closePreview }: Props) {
+export default function ImageDrop({ darkMode, file, setFile, closePreview }: Props) {
+
+    console.log('DrakMode value', darkMode)
+
 
     const { getRootProps, getInputProps } = useDropzone({
         maxFiles: 1,
@@ -104,7 +114,7 @@ export default function ImageDrop({ file, setFile, closePreview }: Props) {
                 </section>) :
                 <>
                     {closePreview ?
-                        (<section style={container}>
+                        (<section style={darkMode === false ? container : dark}>
                             <div {...getRootProps({ className: 'dropzone' })}>
                                 <input {...getInputProps()} />
                                 <p>Drag and drop the image you want to upload or click to select files</p>
