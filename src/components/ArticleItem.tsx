@@ -31,7 +31,7 @@ export default function ArticleItem({ article }: HomeProp) {
     <Link href={`/article/${article.id}`}>
       <a className={styles.card}>
           <Button className={styles.editBtn}>
-            <Image src={check ? Icon.editIcon : Icon.createIconDark} alt='edit-button' width='100%' />
+            <Image src={check ? Icon.editIcon : Icon.editIconDark} alt='edit-button' width='100%' />
           </Button>
           <h3>{article.title} &rarr;</h3>
           <img src={media} alt={article.title} width="100%" className={styles.img} />

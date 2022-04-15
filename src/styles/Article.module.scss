@@ -29,16 +29,12 @@
             height: 50px;
         }
 
-        .editBtn:hover {
-            background: #f1f1f1;
-        }
-
+        .editBtn:hover,
+        .editBtn:focus,
         .editBtn:active {
             background: #f1f1f1;
-        }
-
-        .editBtn:focus {
-            background: #f1f1f1;
+            box-shadow: none;
+            outline: none;
         }
 
         .img {
@@ -115,16 +111,13 @@
             border-radius: 50%;
         }
 
-        .editBtn:hover {
-            background: #f1f1f1;
-        }
 
+        .editBtn:hover,
+        .editBtn:focus,
         .editBtn:active {
-            background: #f1f1f1;
-        }
-
-        .editBtn:focus {
-            background: #f1f1f1;
+            background: #1f1f1f;
+            outline: none;
+            box-shadow: none;
         }
     }
 
