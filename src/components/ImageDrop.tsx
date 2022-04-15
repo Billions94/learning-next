@@ -7,6 +7,7 @@ const container = {
     borderStyle: 'dotted',
     borderWidth: 1,
     padding: 16,
+    marginBottom: 10,
 } as React.CSSProperties;
 
 const dark = {
@@ -117,7 +118,7 @@ export default function ImageDrop({ darkMode, file, setFile, closePreview }: Pro
                         (<section style={darkMode === false ? container : dark}>
                             <div {...getRootProps({ className: 'dropzone' })}>
                                 <input {...getInputProps()} />
-                                <p>Drag and drop the image you want to upload or click to select files</p>
+                                <p className='text-center'>Drag and drop the image you want to upload or click to select files</p>
                             </div>
                         </section>) :
                         (<div style={thumb} key={file.name}>

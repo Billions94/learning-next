@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 100%;
 
 
     .card {
@@ -16,6 +16,35 @@
         border-radius: 10px;
         transition: color 0.15s ease, border-color 0.15s ease;
         max-width: 300px;
+        position: relative;
+
+        .editBtn {
+            position: absolute;
+            top: -20px;
+            left: 261px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .editBtn:hover {
+            background: #f1f1f1;
+        }
+
+        .editBtn:active {
+            background: #f1f1f1;
+        }
+
+        .editBtn:focus {
+            background: #f1f1f1;
+        }
+
+        .img {
+            width: 100%;
+            height: 100px;
+        }
     }
 
     .card:hover,
@@ -60,10 +89,11 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 800px;
+    max-width: 100%;
 
 
     .card {
+        position: relative;
         margin: 1rem;
         padding: 1.5rem;
         text-align: left;
@@ -73,6 +103,29 @@
         border-radius: 10px;
         transition: color 0.15s ease, border-color 0.15s ease;
         max-width: 300px;
+
+        .editBtn {
+            position: absolute;
+            top: -20px;
+            left: 261px;
+            background: transparent;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .editBtn:hover {
+            background: #f1f1f1;
+        }
+
+        .editBtn:active {
+            background: #f1f1f1;
+        }
+
+        .editBtn:focus {
+            background: #f1f1f1;
+        }
     }
 
     .card:hover,

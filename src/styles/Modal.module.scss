@@ -113,26 +113,6 @@
 }
 
 // Form styles
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-    font-family: 'Bitter', serif;
-    font-family: 'Smooch Sans', sans-serif;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: none;
-    border-bottom: 1px solid #ced4da;
-    appearance: none;
-    border-radius: 0;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
 
 #form {
 
@@ -154,6 +134,7 @@
         border-bottom: 1px solid #ced4da;
         appearance: none;
         border-radius: 0;
+        resize: none;
         transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     }
 
@@ -264,7 +245,7 @@
         border: 1px solid black;
         background: white;
         color: black;
-        width: 230px;
+        width: 160px;
         border-radius: 0;
         transition-delay: ease-in 0.5s;
         transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -283,7 +264,7 @@
         background: black;
         letter-spacing: 3px;
         color: white;
-        width: 230px;
+        width: 160px;
         animation-duration: 2s;
     }
 
@@ -303,7 +284,7 @@
         background: black;
         letter-spacing: 3px;
         color: white;
-        width: 230px;
+        width: 160px;
         box-shadow: none;
         outline: none;
 
@@ -313,10 +294,11 @@
         border: 1px solid rgb(108, 117, 125);
         background: transparent;
         color: white;
-        width: 230px;
+        width: 160px;
         border-radius: 0;
         transition-delay: ease-in 0.5s;
         transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        margin-left: auto;
 
         .btnSpan {
             font-size: 20px;
@@ -331,7 +313,7 @@
         background: rgb(230, 230, 230);
         letter-spacing: 3px;
         color: black;
-        width: 230px;
+        width: 160px;
         animation-duration: 2s;
     }
 

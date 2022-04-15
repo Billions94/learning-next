@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { server } from '../../config'
-import { GetStaticProps } from 'next'
-import axios from 'axios'
 import ArticleList from '../components/ArticleList'
 import { useEffect } from 'react'
-import { useUser } from '../context/AuthContext'
+// import { useUser } from '../context/AuthContext'
 import { Article, ListArticlesQuery } from '../API'
 import { API, graphqlOperation } from 'aws-amplify'
 import { listArticles } from '../graphql/queries'
 import { useRecoilValue } from 'recoil'
 import { refreshState } from '../atoms'
+import EditArticle from '../components/EditArticle'
 
 
 export interface HomeProp {
@@ -18,29 +16,14 @@ export interface HomeProp {
   key?: string | number
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const { data } = await axios.get(`${server}/api/articles`)
-    const articles: Article = data
-
-    return {
-      props: {
-        articles,
-      }
-    }
-  } catch (error) {
-    console.error('Error getting articles', error)
-  }
-}
 
 
 export default function Home() {
 
-  const { user } = useUser()
+  // const { user } = useUser()
   const [article, setArticle] = useState<Article[]>([])
   const refresh = useRecoilValue(refreshState)
 
-  console.log('This is the user', user)
 
   useEffect(() => {
     const fetchData = async (): Promise<Article[]> => {
@@ -63,11 +46,12 @@ export default function Home() {
     fetchData()
   }, [refresh])
 
-  console.log('This is the article', article)
+
 
   return (
     <React.Fragment>
       {/* <CreateModal /> */}
+      <EditArticle />
       <ArticleList articles={article} />
     </React.Fragment>
   )

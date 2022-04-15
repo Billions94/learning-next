@@ -18,10 +18,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
         errors: any[];
     }
     const { items } = data.listArticles
-    const paths = items.map((article: Article) => ({ params: { id: article.id } }))
+    const route = items.map((article: Article) => ({ params: { id: article.id } }))
     return {
-        paths,
-        fallback: true
+        paths: route,
+        fallback: false
     }
 }
 

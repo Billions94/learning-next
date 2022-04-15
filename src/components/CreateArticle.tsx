@@ -107,7 +107,7 @@ const FormGroup = (props: FormGroupProps) => {
                 <B.Form.Control className={check ? styles.formcontrol : styles.formcontroldark}
                     type='text'
                     as='textarea'
-                    rows={3}
+                    rows={2}
                     value={newArticle.description}
                     placeholder='Description'
                     onChange={(e) => updateInput('description', e.target.value)} />
@@ -123,7 +123,7 @@ const FormGroup = (props: FormGroupProps) => {
                 <></>
                 <B.Button className={check ? styles.createBtn : styles.createBtnDark}
                     variant='primary' onClick={create}>
-                    <span className={styles.btnSpan}>Create</span>
+                    <span className={styles.btnSpan}>Post</span>
                 </B.Button>
             </div>
         </>

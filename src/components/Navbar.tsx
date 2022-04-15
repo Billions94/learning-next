@@ -10,7 +10,7 @@ import styles from '../styles/Navbar.module.scss'
 
 export default function Navbar() {
 
-    const route = [
+    const routes = [
         {
             name: 'Home',
             path: '/',
@@ -53,7 +53,7 @@ export default function Navbar() {
                 <nav id={check ? styles.navbar : styles.navbarDark}>
                     <ul>
                         <React.Fragment>
-                            {route.map((item, idx) => (
+                            {routes.map((item, idx) => (
                                 <li key={idx}>
                                     <a href={item.path} className={styles.link}>
                                         {item.name}
