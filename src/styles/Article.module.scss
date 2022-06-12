@@ -39,7 +39,7 @@
 
         .img {
             width: 100%;
-            height: 100px;
+            height: 100%;
         }
     }
 
@@ -119,6 +119,12 @@
             outline: none;
             box-shadow: none;
         }
+
+        .img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .card:hover,
@@ -129,6 +135,8 @@
     }
 
     .card {
+        max-height: 330px;
+
         h3 {
             margin: 0 0 1rem 0;
             font-size: 1.5rem;

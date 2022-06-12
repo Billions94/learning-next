@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ArticleList from '../components/ArticleList'
 import { useEffect } from 'react'
-// import { useUser } from '../context/AuthContext'
+import { useUser } from '../context/AuthContext'
 import { Article, ListArticlesQuery } from '../API'
 import { API, graphqlOperation } from 'aws-amplify'
 import { listArticles } from '../graphql/queries'
@@ -20,9 +20,12 @@ export interface HomeProp {
 
 export default function Home() {
 
-  // const { user } = useUser()
+
+  const { user } = useUser()
   const [article, setArticle] = useState<Article[]>([])
   const refresh = useRecoilValue(refreshState)
+
+  console.log('This is the user ', user)
 
 
   useEffect(() => {
@@ -46,7 +49,7 @@ export default function Home() {
     fetchData()
   }, [refresh])
 
-
+  console.log('This is the arcticle', article)
 
   return (
     <React.Fragment>

@@ -71,6 +71,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 //     }
 // }
 
+
 export default function ArticleView({ article }: HomeProp) {
 
     const router = useRouter()
